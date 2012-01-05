@@ -7,7 +7,7 @@
   }
 , "author" : "Taras Kunch <taras.kunch@gmail.com>"
 , "engines" : {
-    "node" : ">=0.6.6"
-  , "npm" : ">=1.1.0"
+    "node" : ">=0.6.0"
+  , "npm" : ">=1.0.0"
   }
 }

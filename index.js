@@ -50,12 +50,15 @@ logging.styles = {
 logging.formatters = {
     time: function() {
         var date = new Date();
+        var timezoneOffset = -date.getTimezoneOffset() / 60;
+        if (timezoneOffset < 0) timezoneOffset = "" + timezoneOffset;
+        else timezoneOffset = "+" + timezoneOffset;
 
         return [
             ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][date.getDay()], ' ',
             date.getFullYear(), '-', addZero(2, date.getMonth() + 1), '-', addZero(2, date.getDate()),
             ' ', addZero(2, date.getHours()), ':', addZero(2, date.getMinutes()), ':', addZero(2, date.getSeconds()), '.',
-            addZero(3, date.getMilliseconds()), ' GMT', date.getTimezoneOffset() / 60
+            addZero(3, date.getMilliseconds()), ' GMT', timezoneOffset
         ].join('');
     },
 
